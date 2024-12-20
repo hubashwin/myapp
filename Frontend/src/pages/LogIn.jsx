@@ -11,7 +11,7 @@ function Login() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        axios.post('http://localhost:3000/login', { name, email, password })
+        axios.post('https://shopaze-backendbyash.onrender.com/login', { name, email, password })
             .then(result => {
                 console.log(result)
                 if (result.data === "Success") {

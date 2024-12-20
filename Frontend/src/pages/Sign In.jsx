@@ -16,7 +16,7 @@ const SignIn = () => {
 
     function handleSubmit(e) {
         e.preventDefault()
-        axios.post('http://localhost:3000/sign-in', { name, email, password })
+        axios.post('https://shopaze-backendbyash.onrender.com/sign-in', { name, email, password })
             .then(result => {
                 if (result.data === "false") {
                     alert(`Hello welcome ${name}`)

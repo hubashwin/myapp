@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Products = () => {
     const [products, setproducts] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:3000/data')
+        axios.get('https://shopaze-backendbyash.onrender.com')
             .then(response => response.data)
             .then(data => setproducts(data))
             .catch(err => console.log(err))

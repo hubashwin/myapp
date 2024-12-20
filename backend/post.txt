@@ -1,0 +1,26 @@
+app.post('/login', (req, res) => {
+    const { name, email, password } = req.body;
+    UserModel.findOne({ email: email })
+        .then(user => {
+            if (user) {
+                if (user.password === password) {
+                    res.json("Success");
+                    res.write(`Welcome Back ${name}`)
+                }
+
+                else {
+                    res.json("The password is incorrect")
+                    res.write("The password is incorrect")
+                }
+            }
+            else {
+                res.json("No record existed")
+            }
+        })
+})
+
+app.post('/sign-in', (req, res) => {
+    UserModel.create(req.body)
+        .then(users => res.json(users))
+        .catch(err => res.json(err))
+})

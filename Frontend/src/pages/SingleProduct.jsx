@@ -8,7 +8,7 @@ function SingleProduct() {
     const [product, setProduct] = useState({});
     useEffect(() => {
         const fetchP = async () => {
-            await axios.get(`http://localhost:3000/data/${id}`)
+            await axios.get(`https://shopaze-backendbyash.onrender.com/${id}`)
                 .then(response => response.data)
                 .then(data => {
                     setProduct(data)
